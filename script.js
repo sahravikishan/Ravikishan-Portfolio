@@ -1,4 +1,3 @@
-// Portfolio data
 const portfolioData = {
   personalInfo: {
     name: "Ravikishan",
@@ -26,9 +25,17 @@ const portfolioData = {
     description: "Completed comprehensive coursework in computer science fundamentals, programming languages, database management, web development, and software engineering principles."
   },
   contact: {
-    email: "raviki364144@gmail.com",
+    email: "ravik364144@gmail.com", // Corrected email to match HTML
     linkedin: "www.linkedin.com/in/ravikishan-sah-688a64245",
     github: "www.github.com/sahravikishan"
+  },
+  resume: {
+    summary: "A dedicated BCA graduate with expertise in full-stack web development, proficient in HTML, CSS, JavaScript, Django, Python, Java, C, C++, and PL/SQL. Passionate about creating innovative solutions and continuously learning new technologies to enhance development skills.",
+    skills: [
+      "Web Development: HTML, CSS, JavaScript, Django",
+      "Programming: Python, Java, C, C++, PL/SQL",
+      "Tools: Git, MS Office"
+    ]
   }
 };
 
@@ -151,6 +158,7 @@ class DownloadManager {
     document.getElementById('download-html')?.addEventListener('click', () => this.downloadHTML());
     document.getElementById('download-markdown')?.addEventListener('click', () => this.downloadMarkdown());
     document.getElementById('download-json')?.addEventListener('click', () => this.downloadJSON());
+    document.getElementById('download-resume')?.addEventListener('click', () => this.downloadResume());
   }
 
   downloadHTML() {
@@ -166,6 +174,11 @@ class DownloadManager {
   downloadJSON() {
     const jsonContent = JSON.stringify(portfolioData, null, 2);
     this.downloadFile(jsonContent, 'Ravikishan_Portfolio.json', 'application/json');
+  }
+
+  downloadResume() {
+    const resumeContent = this.generateResumeContent();
+    this.downloadFile(resumeContent, 'Ravikishan_Resume.tex', 'text/latex');
   }
 
   generateHTMLContent() {
@@ -185,6 +198,7 @@ class DownloadManager {
         .contact { background: #e7f3ff; padding: 15px; border-radius: 5px; }
         ul { padding-left: 20px; }
         .tech-stack { color: #6c757d; font-style: italic; }
+        .resume { background: #e9ecef; padding: 15px; margin: 10px 0; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -212,6 +226,20 @@ class DownloadManager {
         <h2>Education</h2>
         <p><strong>${portfolioData.education.degree}</strong> - ${portfolioData.education.year}</p>
         <p>${portfolioData.education.description}</p>
+        
+        <h2>Resume</h2>
+        <div class="resume">
+            <h3>Professional Summary</h3>
+            <p>${portfolioData.resume.summary}</p>
+            <h3>Skills</h3>
+            <ul>${portfolioData.resume.skills.map(skill => `<li>${skill}</li>`).join('')}</ul>
+            <h3>Education</h3>
+            <p><strong>${portfolioData.education.degree}</strong> - ${portfolioData.education.year}</p>
+            <p>${portfolioData.education.description}</p>
+            <h3>Key Project</h3>
+            <p><strong>${portfolioData.projects[0].title}</strong></p>
+            <p>${portfolioData.projects[0].description}</p>
+        </div>
         
         <h2>Contact Information</h2>
         <div class="contact">
@@ -256,6 +284,22 @@ ${project.features.map(feature => `- ${feature}`).join('\n')}
 **Year:** ${portfolioData.education.year}
 **Description:** ${portfolioData.education.description}
 
+## Resume
+### Professional Summary
+${portfolioData.resume.summary}
+
+### Skills
+${portfolioData.resume.skills.map(skill => `- ${skill}`).join('\n')}
+
+### Education
+**Degree:** ${portfolioData.education.degree}
+**Year:** ${portfolioData.education.year}
+**Description:** ${portfolioData.education.description}
+
+### Key Project
+**${portfolioData.projects[0].title}**
+${portfolioData.projects[0].description}
+
 ## Contact Information
 - **Email:** ${portfolioData.contact.email}
 - **LinkedIn:** ${portfolioData.contact.linkedin}
@@ -264,6 +308,63 @@ ${project.features.map(feature => `- ${feature}`).join('\n')}
 ---
 Generated on: ${new Date().toLocaleDateString()}
 Portfolio Website: Built with HTML, CSS & JavaScript`;
+  }
+
+  generateResumeContent() {
+    return `\\documentclass[a4paper,11pt]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage{lmodern}
+\\usepackage{geometry}
+\\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\\usepackage{titlesec}
+\\usepackage{enumitem}
+\\usepackage{hyperref}
+\\usepackage{xcolor}
+\\definecolor{primary}{RGB}{0, 51, 102}
+\\hypersetup{colorlinks=true,linkcolor=primary,urlcolor=primary}
+
+\\titleformat{\\section}{\\Large\\bfseries\\color{primary}}{\\thesection}{1em}{}
+\\titleformat{\\subsection}{\\large\\bfseries}{\\thesubsection}{1em}{}
+
+\\begin{document}
+
+\\begin{center}
+    {\\Huge \\textbf{${portfolioData.personalInfo.name}}}
+    \\vspace{0.5cm}
+    {\\large ${portfolioData.personalInfo.title}}
+    \\vspace{0.3cm}
+    \\href{mailto:${portfolioData.contact.email}}{${portfolioData.contact.email}} \\ $|$ 
+    \\href{https://${portfolioData.contact.linkedin}}{LinkedIn} \\ $|$ 
+    \\href{https://${portfolioData.contact.github}}{GitHub}
+    \\vspace{0.5cm}
+\\end{center}
+
+\\section{Professional Summary}
+${portfolioData.resume.summary}
+
+\\section{Skills}
+\\begin{itemize}[leftmargin=*]
+${portfolioData.resume.skills.map(skill => `    \\item ${skill}`).join('\n')}
+\\end{itemize}
+
+\\section{Education}
+\\textbf{${portfolioData.education.degree}} \\hfill ${portfolioData.education.year}\\\\
+${portfolioData.education.description}
+
+\\section{Key Project}
+\\textbf{${portfolioData.projects[0].title}}\\\\
+${portfolioData.projects[0].description}\\\\
+\\textbf{Tech Stack:} ${portfolioData.projects[0].techStack.join(', ')}
+
+\\section{Contact Information}
+\\begin{itemize}[leftmargin=*]
+    \\item \\textbf{Email:} \\href{mailto:${portfolioData.contact.email}}{${portfolioData.contact.email}}
+    \\item \\textbf{LinkedIn:} \\href{https://${portfolioData.contact.linkedin}}{${portfolioData.contact.linkedin}}
+    \\item \\textbf{GitHub:} \\href{https://${portfolioData.contact.github}}{${portfolioData.contact.github}}
+\\end{itemize}
+
+\\end{document}`;
   }
 
   downloadFile(content, filename, mimeType) {
@@ -392,6 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ✅ Performance Optimized
     ✅ Accessibility Friendly
     ✅ Download Functionality
+    ✅ Resume Section
     
     Developer: ${portfolioData.personalInfo.name}
   `);
@@ -422,3 +524,4 @@ if ('serviceWorker' in navigator) {
     //   .catch(registrationError => console.log('SW registration failed'));
   });
 }
+
