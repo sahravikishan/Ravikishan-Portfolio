@@ -6,7 +6,10 @@ This Repository avout myself including my skills, project, education etc.
 **Title:** Web Developer | BCA Graduate | Passionate Coder
 
 ## About Me
-I'm a recent BCA graduate with skills in full-stack web development. I have experience in HTML, CSS, JavaScript, Django, Java, Python, C, C++, and PL/SQL. I love building projects and learning new technologies to grow as a developer. My passion lies in creating innovative solutions and bringing ideas to life through code.
+Aspiring software developer currently pursuing MCA, with a BCA degree and strong proficiency in Java, Python, C,
+and C++. Skilled in web technologies, database management, and problem-solving. Passionate about applying
+technical expertise to develop efficient and innovative software solutions. Quick learner with a drive to adapt to new
+technologies and contribute effectively in a dynamic team environment.
 
 ## Skills
 - HTML, CSS, JavaScript: 85%
@@ -27,6 +30,10 @@ I'm a recent BCA graduate with skills in full-stack web development. I have expe
 
 
 ## Education
+**Degree:** Master of Computer Applications (MCA)
+**Year:** 2025 to Present
+**Description:** Pursuing advanced studies in computer applications, focusing on in-depth concepts of software development, advanced programming, data structures, algorithms, artificial intelligence. 
+
 **Degree:** Bachelor of Computer Applications (BCA)
 **Year:** Graduated 2025
 **Description:** Completed comprehensive coursework in computer science fundamentals, programming languages, database management, web development, and software engineering principles.
@@ -36,5 +43,5 @@ I'm a recent BCA graduate with skills in full-stack web development. I have expe
 - **LinkedIn:** www.linkedin.com/in/ravikishan-sah-688a64245
 - **GitHub:** www.github.com/sahravikishan
 
-Generated on: 8/1/2025
+Generated on: 10/10/2025
 Portfolio Website: Built with HTML, CSS & JavaScript
