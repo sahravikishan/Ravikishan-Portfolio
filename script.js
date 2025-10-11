@@ -1,8 +1,8 @@
 const portfolioData = {
   personalInfo: {
     name: "Ravikishan",
-    title: "Web Developer | BCA Graduate | Passionate Coder",
-    about: "I'm a recent BCA graduate with skills in full-stack web development. I have experience in HTML, CSS, JavaScript, Django, Java, Python, C, C++, and PL/SQL. I love building projects and learning new technologies to grow as a developer. My passion lies in creating innovative solutions and bringing ideas to life through code."
+    title: "Web Developer | MCA Student | Passionate Coder",
+    about: "I am currently pursuing MCA, after completing my BCA. I have strong proficiency in Java, Python, C, and C++, along with hands-on experience in HTML, CSS, JavaScript, Django, Java, Python, C, C++, and PL/SQL. I also possess solid expertise in web technologies, database management, and problem-solving. I am passionate about developing efficient and innovative software solutions, and I enjoy building projects that bring ideas to life through code. I am a quick learner, adaptable to new technologies, and capable of contributing effectively in dynamic team environments."
   },
   skills: [
     { name: "HTML, CSS, JavaScript", level: 85 },
@@ -19,18 +19,25 @@ const portfolioData = {
       features: ["Car Listings", "Admin Dashboard", "User Management"]
     }
   ],
-  education: {
-    degree: "Bachelor of Computer Applications (BCA)",
-    year: "Graduated 2025",
-    description: "Completed comprehensive coursework in computer science fundamentals, programming languages, database management, web development, and software engineering principles."
-  },
+  education: [
+    {
+      degree: "Master of Computer Applications (MCA)",
+      year: "2025 – Present",
+      description: "Pursuing advanced studies in computer applications, focusing on in-depth concepts of software development, advanced programming, data structures, algorithms, and artificial intelligence. Enhancing technical expertise through practical projects and research-oriented learning."
+    },
+    {
+      degree: "Bachelor of Computer Applications (BCA)",
+      year: "2022 – 2025",
+      description: "Completed comprehensive coursework in computer science fundamentals, programming languages, database management, web development, and software engineering principles. Gained hands-on experience through various projects and practical assignments."
+    }
+  ],
   contact: {
-    email: "ravik364144@gmail.com", // Corrected email to match HTML
+    email: "ravik364144@gmail.com",
     linkedin: "www.linkedin.com/in/ravikishan-sah-688a64245",
     github: "www.github.com/sahravikishan"
   },
   resume: {
-    summary: "A dedicated BCA graduate with expertise in full-stack web development, proficient in HTML, CSS, JavaScript, Django, Python, Java, C, C++, and PL/SQL. Passionate about creating innovative solutions and continuously learning new technologies to enhance development skills.",
+    summary: "Strong proficiency in Java, Python, C, and C++, along with hands-on experience in web technologies, database management, and problem-solving. Passionate about applying technical expertise to develop efficient and innovative software solutions. A quick learner with a drive to adapt to new technologies and contribute effectively in dynamic team environments.",
     skills: [
       "Web Development: HTML, CSS, JavaScript, Django",
       "Programming: Python, Java, C, C++, PL/SQL",
@@ -177,8 +184,71 @@ class DownloadManager {
   }
 
   downloadResume() {
-    const resumeContent = this.generateResumeContent();
-    this.downloadFile(resumeContent, 'Ravikishan_Resume.tex', 'text/latex');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 10;
+
+    // Header
+    doc.setFontSize(22);
+    doc.text(portfolioData.personalInfo.name, 105, y, { align: 'center' });
+    y += 10;
+    doc.setFontSize(12);
+    doc.text(portfolioData.personalInfo.title, 105, y, { align: 'center' });
+    y += 5;
+    doc.text(portfolioData.contact.email, 105, y, { align: 'center' });
+    y += 5;
+    doc.text(`LinkedIn: ${portfolioData.contact.linkedin}`, 105, y, { align: 'center' });
+    y += 5;
+    doc.text(`GitHub: ${portfolioData.contact.github}`, 105, y, { align: 'center' });
+    y += 15;
+
+    // Professional Summary
+    doc.setFontSize(16);
+    doc.text("Professional Summary", 10, y);
+    y += 10;
+    doc.setFontSize(10);
+    const summaryLines = doc.splitTextToSize(portfolioData.resume.summary, 190);
+    doc.text(summaryLines, 10, y);
+    y += summaryLines.length * 5 + 5;
+
+    // Skills
+    doc.setFontSize(16);
+    doc.text("Skills", 10, y);
+    y += 10;
+    doc.setFontSize(10);
+    portfolioData.resume.skills.forEach(skill => {
+      doc.text(`- ${skill}`, 15, y);
+      y += 5;
+    });
+    y += 5;
+
+    // Education
+    doc.setFontSize(16);
+    doc.text("Education", 10, y);
+    y += 10;
+    doc.setFontSize(10);
+    portfolioData.education.forEach(edu => {
+      doc.text(`${edu.degree} - ${edu.year}`, 10, y);
+      y += 5;
+      const eduLines = doc.splitTextToSize(edu.description, 190);
+      doc.text(eduLines, 10, y);
+      y += eduLines.length * 5 + 5;
+    });
+
+    // Key Project
+    doc.setFontSize(16);
+    doc.text("Key Project", 10, y);
+    y += 10;
+    doc.setFontSize(10);
+    doc.text(portfolioData.projects[0].title, 10, y);
+    y += 5;
+    const projLines = doc.splitTextToSize(portfolioData.projects[0].description, 190);
+    doc.text(projLines, 10, y);
+    y += projLines.length * 5 + 5;
+    doc.text(`Tech Stack: ${portfolioData.projects[0].techStack.join(', ')}`, 10, y);
+
+    // Save
+    doc.save('Ravikishan_Sah_Resume.pdf');
   }
 
   generateHTMLContent() {
@@ -224,8 +294,10 @@ class DownloadManager {
         `).join('')}
         
         <h2>Education</h2>
-        <p><strong>${portfolioData.education.degree}</strong> - ${portfolioData.education.year}</p>
-        <p>${portfolioData.education.description}</p>
+        ${portfolioData.education.map(edu => `
+        <p><strong>${edu.degree}</strong> - ${edu.year}</p>
+        <p>${edu.description}</p>
+        `).join('')}
         
         <h2>Resume</h2>
         <div class="resume">
@@ -234,8 +306,10 @@ class DownloadManager {
             <h3>Skills</h3>
             <ul>${portfolioData.resume.skills.map(skill => `<li>${skill}</li>`).join('')}</ul>
             <h3>Education</h3>
-            <p><strong>${portfolioData.education.degree}</strong> - ${portfolioData.education.year}</p>
-            <p>${portfolioData.education.description}</p>
+            ${portfolioData.education.map(edu => `
+            <p><strong>${edu.degree}</strong> - ${edu.year}</p>
+            <p>${edu.description}</p>
+            `).join('')}
             <h3>Key Project</h3>
             <p><strong>${portfolioData.projects[0].title}</strong></p>
             <p>${portfolioData.projects[0].description}</p>
@@ -280,9 +354,11 @@ ${project.features.map(feature => `- ${feature}`).join('\n')}
 `).join('\n')}
 
 ## Education
-**Degree:** ${portfolioData.education.degree}
-**Year:** ${portfolioData.education.year}
-**Description:** ${portfolioData.education.description}
+${portfolioData.education.map(edu => `
+**Degree:** ${edu.degree}
+**Year:** ${edu.year}
+**Description:** ${edu.description}
+`).join('\n')}
 
 ## Resume
 ### Professional Summary
@@ -292,9 +368,11 @@ ${portfolioData.resume.summary}
 ${portfolioData.resume.skills.map(skill => `- ${skill}`).join('\n')}
 
 ### Education
-**Degree:** ${portfolioData.education.degree}
-**Year:** ${portfolioData.education.year}
-**Description:** ${portfolioData.education.description}
+${portfolioData.education.map(edu => `
+**Degree:** ${edu.degree}
+**Year:** ${edu.year}
+**Description:** ${edu.description}
+`).join('\n')}
 
 ### Key Project
 **${portfolioData.projects[0].title}**
@@ -308,63 +386,6 @@ ${portfolioData.projects[0].description}
 ---
 Generated on: ${new Date().toLocaleDateString()}
 Portfolio Website: Built with HTML, CSS & JavaScript`;
-  }
-
-  generateResumeContent() {
-    return `\\documentclass[a4paper,11pt]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage{lmodern}
-\\usepackage{geometry}
-\\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
-\\usepackage{titlesec}
-\\usepackage{enumitem}
-\\usepackage{hyperref}
-\\usepackage{xcolor}
-\\definecolor{primary}{RGB}{0, 51, 102}
-\\hypersetup{colorlinks=true,linkcolor=primary,urlcolor=primary}
-
-\\titleformat{\\section}{\\Large\\bfseries\\color{primary}}{\\thesection}{1em}{}
-\\titleformat{\\subsection}{\\large\\bfseries}{\\thesubsection}{1em}{}
-
-\\begin{document}
-
-\\begin{center}
-    {\\Huge \\textbf{${portfolioData.personalInfo.name}}}
-    \\vspace{0.5cm}
-    {\\large ${portfolioData.personalInfo.title}}
-    \\vspace{0.3cm}
-    \\href{mailto:${portfolioData.contact.email}}{${portfolioData.contact.email}} \\ $|$ 
-    \\href{https://${portfolioData.contact.linkedin}}{LinkedIn} \\ $|$ 
-    \\href{https://${portfolioData.contact.github}}{GitHub}
-    \\vspace{0.5cm}
-\\end{center}
-
-\\section{Professional Summary}
-${portfolioData.resume.summary}
-
-\\section{Skills}
-\\begin{itemize}[leftmargin=*]
-${portfolioData.resume.skills.map(skill => `    \\item ${skill}`).join('\n')}
-\\end{itemize}
-
-\\section{Education}
-\\textbf{${portfolioData.education.degree}} \\hfill ${portfolioData.education.year}\\\\
-${portfolioData.education.description}
-
-\\section{Key Project}
-\\textbf{${portfolioData.projects[0].title}}\\\\
-${portfolioData.projects[0].description}\\\\
-\\textbf{Tech Stack:} ${portfolioData.projects[0].techStack.join(', ')}
-
-\\section{Contact Information}
-\\begin{itemize}[leftmargin=*]
-    \\item \\textbf{Email:} \\href{mailto:${portfolioData.contact.email}}{${portfolioData.contact.email}}
-    \\item \\textbf{LinkedIn:} \\href{https://${portfolioData.contact.linkedin}}{${portfolioData.contact.linkedin}}
-    \\item \\textbf{GitHub:} \\href{https://${portfolioData.contact.github}}{${portfolioData.contact.github}}
-\\end{itemize}
-
-\\end{document}`;
   }
 
   downloadFile(content, filename, mimeType) {
