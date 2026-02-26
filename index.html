@@ -1,386 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravikishan | Web Developer Portfolio</title>
-    <meta name="description" content="Ravikishan's personal web developer portfolio - BCA Graduate, Full-stack Developer" />
-    <meta name="keywords" content="web developer, portfolio, BCA graduate, full-stack, React, Django, Python, resume" />
-    <meta name="author" content="Ravikishan" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ravikishan-portfolio.com/" />
-    <meta property="og:title" content="Ravikishan | Web Developer Portfolio" />
-    <meta property="og:description" content="BCA Graduate & Full-stack Web Developer passionate about creating innovative solutions" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ravikishan-portfolio.com/" />
-    <meta property="twitter:title" content="Ravikishan | Web Developer Portfolio" />
-    <meta property="twitter:description" content="BCA Graduate & Full-stack Web Developer passionate about creating innovative solutions" />
-    
+    <title>Ravikishan | Full Stack Portfolio</title>
+    <meta name="description" content="Portfolio of Ravikishan, MCA student and full stack developer.">
+    <meta name="keywords" content="Ravikishan portfolio, MCA, full stack developer, Python, Django, JavaScript">
+    <meta name="author" content="Ravikishan">
+    <link rel="icon" href="portfolio-favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle">
-        <span class="theme-icon">🌙</span>
-        Change Theme
-    </button>
+    <!-- Animated Background -->
+    <div class="bg-aurora" aria-hidden="true">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+        <div class="bg-grid-pattern"></div>
+    </div>
 
-    <!-- Header Section -->
-    <header class="header">
-        <div class="header-bg-elements">
-            <div class="bg-element bg-element-1"></div>
-            <div class="bg-element bg-element-2"></div>
-        </div>
-        <div class="header-content">
-            <h1 class="header-title">
-                Hi, I'm <span class="highlight">Ravikishan</span>
-            </h1>
-            <p class="header-subtitle">
-                Web Developer | MCA Student | Passionate Coder
-            </p>
-            <div class="scroll-indicator">
-                <div class="scroll-mouse">
-                    <div class="scroll-wheel"></div>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <header class="topbar" id="topbar">
+        <div class="container">
+            <nav class="topbar-inner">
+                <a href="#home" class="brand">
+                    <span class="brand-icon">R</span>
+                    <span class="brand-text">Ravikishan</span>
+                </a>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a class="nav-link" href="#home"><i class="bi bi-house-door"></i> Home</a>
+                    <a class="nav-link" href="#about"><i class="bi bi-person"></i> About</a>
+                    <a class="nav-link" href="#skills"><i class="bi bi-code-slash"></i> Skills</a>
+                    <a class="nav-link" href="#projects"><i class="bi bi-folder2-open"></i> Projects</a>
+                    <a class="nav-link" href="#education"><i class="bi bi-mortarboard"></i> Education</a>
+                    <a class="nav-link" href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a>
+                    <a class="nav-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a>
                 </div>
-            </div>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+                    <i class="bi bi-sun-fill theme-icon-light"></i>
+                </button>
+            </nav>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    I am currently pursuing <span class="highlight-text">MCA</span>, after completing my 
-                    <span class="highlight-text">BCA</span>. I have strong proficiency in 
-                    <span class="highlight-text">Java, Python, C, and C++</span>, along with hands-on experience in 
-                    <span class="highlight-text">HTML, CSS, JavaScript, Django, Java, Python, C, C++, and PL/SQL</span>. 
-                    I also possess solid expertise in 
-                    <span class="highlight-text">web technologies, database management, and problem-solving</span>. 
-                    I am passionate about developing efficient and innovative software solutions, and I enjoy building projects that bring ideas to life through code. 
-                    I am a quick learner, adaptable to new technologies, and capable of contributing effectively in dynamic team environments.
-                </p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <div class="hero-content reveal">
+                            <div class="hero-badge">
+                                <span class="badge-dot"></span>
+                                <span>Available for Opportunities</span>
+                            </div>
+                            <p class="eyebrow">MCA Student &amp; Full Stack Developer</p>
+                            <h1 class="hero-title">
+                                Building practical products with
+                                <span class="gradient-text">clean code</span> and
+                                <span class="gradient-text-alt">thoughtful UI.</span>
+                            </h1>
+                            <p class="hero-summary">
+                                I focus on performance, usability, and maintainable engineering. I work across Django, Python, JavaScript,
+                                SQL, and modern frontend systems to ship reliable web products.
+                            </p>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card" data-skill="90">
-                    <div class="skill-header">
-                        <h3 class="skill-name">HTML, CSS, JavaScript</h3>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress orange" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="skill-card" data-skill="85">
-                    <div class="skill-header">
-                        <h3 class="skill-name">Python, Django</h3>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress green" data-width="75"></div>
-                    </div>
-                </div>
-                <div class="skill-card" data-skill="80">
-                    <div class="skill-header">
-                        <h3 class="skill-name">Java, PL/SQL</h3>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress red" data-width="80"></div>
-                    </div>
-                </div>
-                <div class="skill-card" data-skill="75">
-                    <div class="skill-header">
-                        <h3 class="skill-name">C, C++</h3>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress blue" data-width="75"></div>
-                    </div>
-                </div>
-                <div class="skill-card" data-skill="85">
-                    <div class="skill-header">
-                        <h3 class="skill-name">MS Office, Git</h3>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress purple" data-width="85"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <div class="hero-actions">
+                                <a href="#projects" class="btn-glow btn-glow-primary">
+                                    <i class="bi bi-rocket-takeoff"></i>
+                                    Explore Projects
+                                </a>
+                                <a href="#contact" class="btn-glow btn-glow-outline">
+                                    <i class="bi bi-chat-dots"></i>
+                                    Work With Me
+                                </a>
+                            </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="image.png" alt="CarInfoSystem Screenshot">
-                        <div class="project-overlay"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">CarInfoSystem</h3>
-                        <p class="project-description">
-                            A comprehensive system for managing car information including listings, search functionality, and admin dashboard with user authentication.
-                        </p>
-                        <div class="tech-stack">
-                            <h4>Tech Stack:</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Django</span>
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">SQLite</span>
-                                <span class="tech-tag">JavaScript</span>
+                            <div class="metrics-row" id="metrics">
+                                <div class="metric-card glass-card">
+                                    <p class="metric-value" id="metric-projects">0</p>
+                                    <p class="metric-label">Projects</p>
+                                </div>
+                                <div class="metric-card glass-card">
+                                    <p class="metric-value" id="metric-tech">0</p>
+                                    <p class="metric-label">Technologies</p>
+                                </div>
+                                <div class="metric-card glass-card">
+                                    <p class="metric-value" id="metric-education">0</p>
+                                    <p class="metric-label">Milestones</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul class="features-list">
-                                <li>Car Listings</li>
-                                <li>Admin Dashboard</li>
-                                <li>User Management</li>
-                            </ul>
-                        </div>
-                        <a href="https://github.com/sahravikishan/CarInfoSystem" class="project-link">
-                            View Project
-                            <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </a>
+                    </div>
+                    <div class="col-lg-5">
+                        <aside class="hero-panel glass-card reveal">
+                            <div class="hero-panel-header">
+                                <div class="panel-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="panel-title">current_focus.md</span>
+                            </div>
+                            <div class="hero-panel-body">
+                                <h2><i class="bi bi-crosshair"></i> Current Focus</h2>
+                                <ul class="focus-list">
+                                    <li>
+                                        <span class="focus-icon"><i class="bi bi-check-circle-fill"></i></span>
+                                        Production-ready Django applications
+                                    </li>
+                                    <li>
+                                        <span class="focus-icon"><i class="bi bi-check-circle-fill"></i></span>
+                                        Responsive frontend with strong UX
+                                    </li>
+                                    <li>
+                                        <span class="focus-icon"><i class="bi bi-check-circle-fill"></i></span>
+                                        Data structures and algorithmic foundations
+                                    </li>
+                                </ul>
+                                <div class="hero-panel-foot">
+                                    <i class="bi bi-lightning-charge-fill"></i>
+                                    Open to internships and full-time opportunities
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section education-section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-content">
-
-                <!-- MCA Section -->
-                <div class="education-card" style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-                    <div class="education-icon" style="margin-right: 15px;">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                        </svg>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-person-badge"></i> About</p>
+                    <h2>Engineer mindset with <span class="gradient-text">product awareness</span></h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <article class="about-card glass-card reveal">
+                            <div class="card-icon-wrap">
+                                <i class="bi bi-person-lines-fill"></i>
+                            </div>
+                            <h3>Profile</h3>
+                            <p id="about-text"></p>
+                        </article>
                     </div>
-                    <div class="education-info">
-                        <h3 class="education-degree">Master of Computer Applications (MCA)</h3>
-                        <p class="education-year">2025 – Present</p>
-                        <div class="education-description">
-                            <p>
-                                Pursuing advanced studies in computer applications, focusing on in-depth concepts of 
-                                <span class="highlight-text">software development, advanced programming, data structures, algorithms, and artificial intelligence</span>. 
-                                Enhancing technical expertise through practical projects and research-oriented learning.
-                            </p>
-                        </div>
+                    <div class="col-lg-6">
+                        <article class="about-card glass-card reveal">
+                            <div class="card-icon-wrap">
+                                <i class="bi bi-stars"></i>
+                            </div>
+                            <h3>Strengths</h3>
+                            <div class="chip-list" id="about-strengths"></div>
+                        </article>
                     </div>
                 </div>
-
-                <!-- BCA Section -->
-                <div class="education-card" style="display: flex; align-items: flex-start;">
-                    <div class="education-icon" style="margin-right: 15px;">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="40" height="40">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                        </svg>
-                    </div>
-                    <div class="education-info">
-                        <h3 class="education-degree">Bachelor of Computer Applications (BCA)</h3>
-                        <p class="education-year">2022 – 2025</p>
-                        <div class="education-description">
-                            <p>
-                                Completed comprehensive coursework in 
-                                <span class="highlight-text">computer science fundamentals, programming languages, database management, web development, and software engineering principles</span>. 
-                                Gained hands-on experience through various projects and practical assignments.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Skills Section -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-cpu"></i> Skills</p>
+                    <h2>Core stack and <span class="gradient-text-alt">toolset</span></h2>
+                </div>
+                <div class="row g-4" id="skills-grid"></div>
+            </div>
+        </section>
 
-
-    <!-- Resume Section -->
-    <section id="resume" class="section resume-section">
-        <div class="container">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-content">
-
-                <!-- Professional Summary -->
-                <div class="resume-card">
-                    <h3 class="resume-title">Professional Summary</h3>
-                    <p class="resume-text">
-                        Strong proficiency in 
-                        <strong>Java, Python, C, and C++</strong>, along with hands-on experience in 
-                        <strong>web technologies, database management, and problem-solving</strong>. 
-                        Passionate about applying technical expertise to develop efficient and innovative software solutions. 
-                        A quick learner with a drive to adapt to new technologies and contribute effectively in dynamic team environments.
-                    </p>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-folder2-open"></i> Projects</p>
+                    <h2>Selected <span class="gradient-text">work</span></h2>
                 </div>
 
-                <!-- Skills -->
-                <div class="resume-card">
-                    <h3 class="resume-title">Skills</h3>
-                    <ul class="resume-list">
-                        <li><strong>Web Development :</strong> HTML, CSS, JavaScript, Django</li>
-                        <li><strong>Programming :</strong> Python, Java, C, C++, PL/SQL</li>
-                        <li><strong>Tools :</strong> Git, MS Office</li>
-                    </ul>
+                <div class="projects-toolbar reveal">
+                    <div class="filter-group" id="project-filters"></div>
                 </div>
 
-                <!-- Education -->
-                <div class="resume-card">
-                    <h3 class="resume-title">Education</h3>
-                    <p class="resume-text">
-                        <strong>Master of Computer Applications (MCA)</strong> - 2025 to Present<br>
-                        Advanced studies in software development, programming, data structures, algorithms, and AI.<br><br>
-                        <strong>Bachelor of Computer Applications (BCA)</strong> - Graduated 2025<br>
-                        Comprehensive study in computer science, programming, database management, and web development.
-                    </p>
+                <div class="row g-4" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-mortarboard"></i> Education</p>
+                    <h2>Academic <span class="gradient-text-alt">path</span></h2>
+                </div>
+                <div class="timeline" id="education-timeline"></div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-file-earmark-person"></i> Resume</p>
+                    <h2>Snapshot for <span class="gradient-text">recruiters</span></h2>
                 </div>
 
-                <!-- Key Project -->
-                <div class="resume-card">
-                    <h3 class="resume-title">Key Project</h3>
-                    <p class="resume-text">
-                        <strong>CarInfoSystem</strong><br>
-                        Developed a system for managing car information with features like listings, admin dashboard, and user authentication using Django, HTML, CSS, SQLite, and JavaScript.
-                    </p>
-                </div>
-
-                <!-- Download Button -->
-                <div class="resume-download">
-                    <a href="Ravikishan Sah Resume.pdf" download>
-                    <button id="download-resume" class="download-btn red">
-                        📄 Download Resume (PDF)
-                    </button>
+                <article class="resume-card glass-card reveal">
+                    <div class="resume-header">
+                        <div class="card-icon-wrap large">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                        </div>
+                        <div>
+                            <h3>Professional Summary</h3>
+                            <p class="resume-subtitle">Full Stack Developer & MCA Student</p>
+                        </div>
+                    </div>
+                    <p id="resume-summary" class="resume-text"></p>
+                    <h4><i class="bi bi-bookmark-star-fill"></i> Key Highlights</h4>
+                    <ul id="resume-skills" class="resume-list"></ul>
+                    <a class="btn-glow btn-glow-primary" href="Ravikishan Sah Resume.pdf" download>
+                        <i class="bi bi-download"></i>
+                        Download Resume PDF
                     </a>
-                </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-intro">
-                <p>
-                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. 
-                    Feel free to reach out through any of the channels below!
-                </p>
-            </div>
-            <div class="contact-grid">
-                <a href="mailto:ravik364144@gmail.com" class="contact-card">
-                    <div class="contact-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3>Email</h3>
-                    <p>ravik364144@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/ravikishan-sah-688a64245" class="contact-card">
-                    <div class="contact-icon">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>ravikishan-sah-688a64245</p>
-                </a>
-                <a href="https://github.com/sahravikishan" class="contact-card">
-                    <div class="contact-icon">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>sahravikishan</p>
-                </a>
-            </div>
-            
-            <!-- Download Section -->
-            <div class="download-section">
-                <h3>Download Portfolio</h3>
-                <div class="download-buttons">
-                    <button id="download-html" class="download-btn green">
-                        📄 Download HTML
-                    </button>
-                    <button id="download-markdown" class="download-btn blue">
-                        📝 Download Markdown
-                    </button>
-                    <button id="download-json" class="download-btn purple">
-                        💾 Download JSON
-                    </button>
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow"><i class="bi bi-send"></i> Contact</p>
+                    <h2>Let's build something <span class="gradient-text-alt">useful</span></h2>
                 </div>
-                <p class="download-note">
-                    Choose your preferred format to download your portfolio
-                </p>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-5">
+                        <article class="contact-spotlight reveal">
+                            <div class="spotlight-bg"></div>
+                            <p class="contact-kicker"><i class="bi bi-lightning-charge-fill"></i> Quick Response</p>
+                            <h3>Have an idea, role, or project in mind?</h3>
+                            <p>
+                                I am open to internship opportunities, collaboration on real products, and engineering discussions.
+                                Reach out through any channel and I will get back with clear next steps.
+                            </p>
+                            <div class="contact-status">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Available for opportunities
+                            </div>
+                            <div class="contact-cta">
+                                <a class="btn-glow btn-glow-white" href="mailto:ravik364144@gmail.com">
+                                    <i class="bi bi-envelope-fill"></i> Send Email
+                                </a>
+                                <a class="btn-glow btn-glow-glass" href="https://www.linkedin.com/in/ravikishan-sah-688a64245" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-linkedin"></i> Connect
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3" id="contact-grid"></div>
+                    </div>
+                </div>
+
+                <article class="download-panel glass-card reveal">
+                    <div class="row align-items-center g-3">
+                        <div class="col-md-6">
+                            <h3><i class="bi bi-cloud-arrow-down-fill"></i> Export Portfolio Data</h3>
+                            <p>Download a structured copy in your preferred format.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="download-actions">
+                                <button class="btn-glow btn-glow-outline btn-sm" id="download-html">
+                                    <i class="bi bi-filetype-html"></i> HTML
+                                </button>
+                                <button class="btn-glow btn-glow-outline btn-sm" id="download-markdown">
+                                    <i class="bi bi-markdown"></i> Markdown
+                                </button>
+                                <button class="btn-glow btn-glow-outline btn-sm" id="download-json">
+                                    <i class="bi bi-filetype-json"></i> JSON
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <h3 class="footer-title">Ravikishan</h3>
-                <p class="footer-subtitle">
-                    Building the future, one line of code at a time.
-                </p>
-                
+            <div class="footer-inner glass-card">
+                <p class="footer-brand">Ravikishan Portfolio</p>
+                <p class="footer-tagline">Building the future, one line of code at a time.</p>
+
+                <div class="footer-meta">
+                    <span class="footer-chip"><i class="bi bi-broadcast"></i> Open to Opportunities</span>
+                    <span class="footer-sep"></span>
+                    <span class="footer-chip"><i class="bi bi-mortarboard-fill"></i> MCA | Full Stack Developer</span>
+                </div>
+
                 <div class="footer-social">
-                    <a href="mailto:ravik364144@gmail.com" class="social-link">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+                    <a href="mailto:ravik364144@gmail.com" class="social-link" aria-label="Email">
+                        <i class="bi bi-envelope-fill"></i>
                     </a>
-                    <a href="https://linkedin.com/in/ravikishan-sah-688a64245" class="social-link">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
+                    <a href="https://www.linkedin.com/in/ravikishan-sah-688a64245" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
                     </a>
-                    <a href="https://github.com/sahravikishan" class="social-link">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
+                    <a href="https://github.com/sahravikishan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
                     </a>
                 </div>
-                
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Ravikishan. All rights reserved. Built with HTML, CSS & JavaScript.</p>
-                </div>
+
+                <div class="footer-divider"></div>
+                <p class="footer-copy">Copyright <span id="current-year"></span> Ravikishan. All rights reserved.</p>
+                <p class="footer-tech">Built with HTML, CSS, JavaScript & Bootstrap</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
-
-
-
