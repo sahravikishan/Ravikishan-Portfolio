@@ -26,20 +26,20 @@ const portfolioData = {
   ],
   projects: [
     {
+      title: "AlgoQuest",
+      description: "Learning platform for algorithm concepts with visual explanation and guided steps.",
+      stack: ["Django","Python", "Algorithms", "Data Structures", "3D Visualization"],
+      highlights: ["Visual learning", "Step-by-step explanation", "Concept clarity"],
+      github: "https://github.com/sahravikishan/AlgoQuest",
+      category: "Python"
+    },
+    {
       title: "CarInfoSystem",
       description: "System to manage car listings with search, filtering, user authentication, and an admin panel.",
       stack: ["Django", "HTML", "CSS", "SQLite", "JavaScript"],
       highlights: ["Car search and listings", "Admin dashboard", "Authentication"],
       github: "https://github.com/sahravikishan/CarInfoSystem",
       category: "Django"
-    },
-    {
-      title: "MusicFlow",
-      description: "Responsive music streaming UI with playlist controls and smooth playback interactions.",
-      stack: ["Django", "HTML", "CSS", "JavaScript", "Bootstrap"],
-      highlights: ["Audio control UI", "Guitar Audio Generation", "Mobile responsive"],
-      github: "https://github.com/sahravikishan/MusicFlow",
-      category: "Web"
     },
     {
       title: "CoffeeKaafiHai",
@@ -50,12 +50,20 @@ const portfolioData = {
       category: "Django"
     },
     {
-      title: "AlgoQuest",
-      description: "Learning platform for algorithm concepts with visual explanation and guided steps.",
-      stack: ["Django","Python", "Algorithms", "Data Structures", "3D Visualization"],
-      highlights: ["Visual learning", "Step-by-step explanation", "Concept clarity"],
-      github: "https://github.com/sahravikishan/AlgoQuest",
-      category: "Python"
+      title: "GeoVision AI",
+      description: "A satellite image classification project that predicts land-use categories using deep learning.",
+      stack: ["Python", "Jupyter", "PyTorch", "Streamlit", "Scikit-learn", "EfficientNet-B0"],
+      highlights: ["Satellite image classify", "Multiple image category", "Trained on the EuroSAT dataset"],
+      github: "https://github.com/sahravikishan/GeoVision-AI",
+      category: "Deep Learning & AI"
+    },
+    {
+      title: "MusicFlow",
+      description: "Responsive music streaming UI with playlist controls and smooth playback interactions.",
+      stack: ["Django", "HTML", "CSS", "JavaScript", "Bootstrap"],
+      highlights: ["Audio control UI", "Guitar Audio Generation", "Mobile responsive"],
+      github: "https://github.com/sahravikishan/MusicFlow",
+      category: "Web"
     },
     {
       title: "Ravikishan Portfolio",
@@ -94,7 +102,8 @@ const portfolioData = {
       "Web development with HTML, CSS, JavaScript, and Django",
       "Programming in Python, Java, C, C++, and PL/SQL",
       "Database design with SQLite and MySQL",
-      "Version control and collaboration with Git"
+      "Version control and collaboration with Git",
+      "Data analysis and reporting with Excel, Power BI, and SQL" 
     ]
   }
 };
