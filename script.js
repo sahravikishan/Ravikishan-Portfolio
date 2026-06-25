@@ -264,7 +264,7 @@ const ui = {
 
     this.projectsGrid.innerHTML = portfolioData.projects
       .map((project, index) => {
-        const visualClass = project.category.toLowerCase();
+        const visualClass = project.category.toLowerCase().replace(/&/g, "").replace(/\s+/g, "-");
         const code = project.title
           .split(" ")
           .map((word) => word[0])
