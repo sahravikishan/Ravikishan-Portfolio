@@ -40,7 +40,7 @@ technologies and contribute effectively in a dynamic team environment.
 
 ## Contact Information
 - **Email:** raviki364144@gmail.com
-- **LinkedIn:** www.linkedin.com/in/ravikishan-sah-688a64245
+- **LinkedIn:** www.linkedin.com/in/sahravikishan
 - **GitHub:** www.github.com/sahravikishan
 
 Generated on: 10/10/2025
