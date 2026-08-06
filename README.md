@@ -3,7 +3,7 @@ This Repository avout myself including my skills, project, education etc.
 
 ## Personal Information
 **Name:** Ravikishan
-**Title:** Web Developer | BCA Graduate | Passionate Coder
+**Title:** Full Stack Developer | BCA Graduate | Passionate Coder
 
 ## About Me
 Aspiring software developer currently pursuing MCA, with a BCA degree and strong proficiency in Java, Python, C,
