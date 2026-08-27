@@ -92,7 +92,7 @@ const portfolioData = {
   ],
   contact: [
     { label: "Email", value: "ravik364144@gmail.com", href: "mailto:ravik364144@gmail.com" },
-    { label: "LinkedIn", value: "ravikishan-sah-688a64245", href: "https://www.linkedin.com/in/sahravikishan" },
+    { label: "LinkedIn", value: "sahravikishan", href: "https://www.linkedin.com/in/sahravikishan" },
     { label: "GitHub", value: "sahravikishan", href: "https://github.com/sahravikishan" },
     { label: "Location", value: "Pune, India", href: "" }
   ],
